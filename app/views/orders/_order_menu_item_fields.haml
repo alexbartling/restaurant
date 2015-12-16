@@ -1,0 +1,4 @@
+%li{class: 'nested-fields'}
+  = f.label :menu_item_quantity
+  = f.text_field :menu_item_quantity
+  = f.select :menu_item_id, MenuItem.all.collect { |i| [i.description, i.id]}

@@ -1,0 +1,7 @@
+= form_for @order do |f|
+  #order_menu_items
+    %ol
+      = f.fields_for :order_menu_items do |order_menu_item|
+        = render 'order_menu_item_fields', f: order_menu_item
+    = link_to_add_association 'add menu item', f, :order_menu_items
+  = f.submit 'Submit'
