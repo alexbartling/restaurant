@@ -1,0 +1,5 @@
+%h3= @menu.name
+- @menu.menu_items.each do |item|
+  %p= item.description
+  %p= item.price
+  %br

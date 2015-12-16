@@ -6,8 +6,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new order_params
     if @order.save
-      flash.notice = 'Success!'
-      redirect_to new_order_path
+      redirect_to menus_path, notice: 'Success!'
     else
       render :new
     end

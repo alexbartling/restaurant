@@ -1,4 +1,6 @@
 = form_for @order do |f|
+  - if f.object.errors.any?
+    = f.object.errors.full_messages.to_sentence
   #order_menu_items
     %ol
       = f.fields_for :order_menu_items do |order_menu_item|
