@@ -16,12 +16,13 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem "database_cleaner"
   gem 'capybara', '~> 2.3.0'
+  gem "capybara-webkit"
   gem 'launchy'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
-  gem 'byebug'
+  gem 'pry'
   gem 'factory_girl_rails', require: false
   gem 'web-console', '~> 2.0'
   gem 'spring'
