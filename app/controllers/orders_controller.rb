@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
     @order = Order.new order_params
     if @order.save
       flash.notice = 'Success!'
+      redirect_to new_order_path
     else
       render :new
     end
@@ -20,7 +21,7 @@ class OrdersController < ApplicationController
       permit(
         order_menu_items_attributes: [
           :menu_item_quantity,
-          :menu_item
+          :menu_item_id
         ]
       )
   end
