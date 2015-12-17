@@ -5,7 +5,6 @@ class MenuItem < ActiveRecord::Base
   belongs_to :menu
 
   def market_price total_inv, number_of_items
-    require 'price'
     Price.calculate current_stock_level, total_inv, number_of_items, price
   end
 

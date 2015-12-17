@@ -17,11 +17,11 @@ describe MenuItem do
       @i.inventory_levels << build(:inventory_level, quantity: 1)
     end
 
-    it 'returns 1' do
+    it 'returns 1 when inventory quantity > orders' do
       expect(@i.current_stock_level).to eq 1
     end
 
-    it 'returns 0' do
+    it 'returns 0 when orders are == inventory quantity' do
       @i.order_menu_items << build(:order_menu_item, menu_item_quantity: 1)
       expect(@i.current_stock_level).to eq 0
     end
