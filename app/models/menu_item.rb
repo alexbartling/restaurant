@@ -5,6 +5,7 @@ class MenuItem < ActiveRecord::Base
   belongs_to :menu
 
   def market_price total_inv, number_of_items
+    return 'Out of Stock' if current_stock_level.zero?
     Price.calculate current_stock_level, total_inv, number_of_items, price
   end
 
