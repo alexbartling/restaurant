@@ -4,5 +4,5 @@
 %br
 - @menu.menu_items.each do |item|
   %p= item.description
-  %p= item.price
+  %p= item.market_price(@menu.total_inventory, @menu.number_of_items_in_stock)
   %br
