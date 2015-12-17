@@ -1,4 +1,7 @@
 %h3= @menu.name
+%br
+%h3= link_to 'New Order', new_order_path
+%br
 - @menu.menu_items.each do |item|
   %p= item.description
   %p= item.price
